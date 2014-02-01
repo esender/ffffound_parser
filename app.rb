@@ -4,8 +4,6 @@ require 'sqlite3'
 
 db = SQLite3::Database.new( "ffffound.db" )
 
-db.execute("INSERT INTO images (image) 
-            VALUES (?)", ['http://blablabal.ru'])
 pages = 0..100
 
 start_page = 'http://ffffound.com/?offset='
@@ -22,4 +20,3 @@ pages.each do |index|
   sleep 1
 
 end
-
