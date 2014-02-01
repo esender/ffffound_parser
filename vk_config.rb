@@ -3,12 +3,12 @@ VkontakteApi.configure do |config|
   # (не нужны при использовании сторонней авторизации)
   config.app_id       = '4158975'
   config.app_secret   = 'gizVL3lWosuH4ohLe79j'
-  # config.redirect_uri = 'http://example.com/oauth/callback'
+  config.redirect_uri = 'http://api.vkontakte.ru/blank.html'
 
   # # faraday-адаптер для сетевых запросов
   # config.adapter = :net_http
   # # HTTP-метод для вызова методов API (:get или :post)
-  # config.http_verb = :post
+  config.http_verb = :post
   # # параметры для faraday-соединения
   # config.faraday_options = {
   #   ssl: {
