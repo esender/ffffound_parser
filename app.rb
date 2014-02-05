@@ -4,11 +4,7 @@ require 'sqlite3'
 
 db = SQLite3::Database.new( "ffffound.db" )
 
-<<<<<<< HEAD
-pages = 0..100
-=======
 pages = 0..4
->>>>>>> 69b5ced95a378b70fa33b7a2554a3e08753bf7b5
 
 start_page = 'http://ffffound.com/?offset='
 
