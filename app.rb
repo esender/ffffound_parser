@@ -16,15 +16,12 @@ def string_time_to_object(times)
   sum
 end
 
-pages = 0...1
+pages = 0..4
 
 start_page = 'http://ffffound.com/?offset='
 
 pages.each do |index|
   doc = Nokogiri::HTML(open(start_page+(index*25).to_s))
-  #doc.css("a img[@id*='asset']").each do |link|
-  #  db.execute("INSERT INTO images (image)
-  #          VALUES (?)", [link['src']])
   doc.css('blockquote.asset').each do |block|
     string_date = block.css('.description')[0].text.match('(\s?(\d+)\s(hours|minutes|days))+\s(ago)')[0][0..-5]
     date =  (DateTime.now - string_time_to_object(string_date.scan(/(\d+\s\w+)/i).flatten).seconds).strftime("%Y-%m-%d %H:%M:%S")
